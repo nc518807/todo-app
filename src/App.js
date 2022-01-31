@@ -32,7 +32,7 @@ import TodoLists from "./TodoLists";
           <button onClick={listofItems}>+</button>
         <ol>
             {/* <li>buy some apples</li> */
-            
+
 //            { Items.map((Itemval)=>{
 //            return <li>{Itemval}</li>
 //          })}
@@ -45,44 +45,44 @@ import TodoLists from "./TodoLists";
 //    );
 //};
 
- const App = ()=>{
-     const[itemList,listSet]= useState("");
-     const[itemSet,inputList]= useState([]);
-     const items = (event)=>{
-         listSet(event.target.value);
-     }
-     const listofItems = ()=>{
-         inputList((finalItem)=>{
-             return[...finalItem,itemList];
-         })
-         listSet("");
-         
+const App = () => {
+    const [itemList, listSet] = useState("");
+    const [itemSet, inputList] = useState([]);
+    const items = (event) => {
+        listSet(event.target.value);
+    }
+    const listofItems = () => {
+        inputList((finalItem) => {
+            return [...finalItem, itemList];
+        })
+        listSet("");
 
-     }
-     return (
-     <>
-         <div className="main_div">
-             <div className="inner_div">
-                 <br/>
-                 <h1>To do items</h1>
-                 <br/>
-                 <input type="text" placeholder="Add items here"
-                 value={itemList} onChange={items}/>
-                 <button onClick={listofItems}>+</button>
-                 <ol>
-                     {/* <li>{itemList} </li> */}
 
-                     {itemSet.map((itemVal)=>{
-                      return <TodoLists text ={itemVal} />
-                     })
-                     }
-                 </ol>
-             </div>
-         </div>
-         
-     </>
-     )
- }
+    }
+    return (
+        <>
+            <div className="main_div">
+                <div className="inner_div">
+                    <br />
+                    <h1>To do items</h1>
+                    <br />
+                    <input type="text" placeholder="Add items here"
+                        value={itemList} onChange={items} />
+                    <button onClick={listofItems}>+</button>
+                    <ol>
+                        {/* <li>{itemList} </li> */}
+
+                        {itemSet.map((itemVal) => {
+                            return <TodoLists text={itemVal} />
+                        })
+                        }
+                    </ol>
+                </div>
+            </div>
+
+        </>
+    )
+}
 
 
 
